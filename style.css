@@ -87,12 +87,13 @@ nav{
     padding: 10.4vw 0;
     width: 100%;
     height: 30vh;
-    color: #e7cfb1;
+    color: #e05c0f;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    transform: translateX(35%);
 }
 .page1-element p{
     position: absolute;
@@ -106,7 +107,7 @@ nav{
     height: 7.63vw;
     padding: 3vw 2vw;
     transform-origin: center;
-    border: 0.069vw solid #e7cfb1;
+    border: 0.069vw solid #e05c0f;
     border-radius: 50%;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
     position: absolute;
