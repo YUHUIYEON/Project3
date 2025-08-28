@@ -98,13 +98,13 @@ nav{
 .page1-element p{
     position: absolute;
     text-transform: uppercase;
-    line-height: 1.66vw;
-    font-size: 1.73vw;
-    font-weight: 400;
+    line-height: 2vw;
+    font-size: 2.5vw;
+    font-weight: 500;
 }
 .page1-element-border{
-    width: 22.22vw;
-    height: 7.63vw;
+    width: 27vw;
+    height: 8.5vw;
     padding: 3vw 2vw;
     transform-origin: center;
     border: 0.069vw solid #ff6308;
@@ -117,7 +117,17 @@ nav{
 .page1-element-border:hover{
     transform: rotate(-20deg) scale(1.05);
 }
-
+/* #pageItem1{
+    width: 12%;
+    position: absolute; 
+    right: 10%; 
+    top: 45%; 
+    animation: slowBlink 4s ease-in-out infinite; 
+}
+@keyframes slowBlink{
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+} */
 
 
 
@@ -351,7 +361,7 @@ nav{
 
 /* page5 */
 #page5{
-    height: 100vh;
+    height: 50vh;
     width: 100%;
     /* background-color: red; */
     padding: 0 40px;
@@ -424,7 +434,7 @@ nav{
 
 /* page7 */
 #page7{
-    height: 70vh;
+    height: 50vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -728,22 +738,7 @@ nav{
     opacity: 0; 
     z-index: 0; 
 }
-#ii1:hover {
-    background: linear-gradient(
-        to bottom,
-        #003300 0%,     /* 어두운 딥그린 */
-        #008000 15%,    /* 중간 녹색 */
-        #39ff14 30%,    /* 네온 그린 */
-        #66ff66 42%,    /* 밝은 형광 연두 */
-        #f5ffe5 50%,    /* 중앙 하이라이트 (거의 흰색 연두빛) */
-        #66ff66 58%,    /* 다시 밝은 형광 연두 */
-        #39ff14 70%,    /* 네온 그린 */
-        #008000 85%,    /* 중간 녹색 */
-        #003300 100%    /* 아주 어두운 딥그린 */
-    );
-    transition: background 0.8s ease;
-}
-
+#ii1:hover{ background-image: url(image/background4.png); }
 
 #ii2:hover {
     background: linear-gradient(
