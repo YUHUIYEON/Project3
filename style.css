@@ -87,7 +87,7 @@ nav{
     padding: 10.4vw 0;
     width: 100%;
     height: 30vh;
-    color: #e05c0f;
+    color: #ff6308;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -107,7 +107,7 @@ nav{
     height: 7.63vw;
     padding: 3vw 2vw;
     transform-origin: center;
-    border: 0.069vw solid #e05c0f;
+    border: 0.069vw solid #ff6308;
     border-radius: 50%;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
     position: absolute;
@@ -133,7 +133,7 @@ nav{
 #page2 video {
     height: 100vh;
     object-fit: cover;
-    width: 30%;
+    width: 20%;
 }
 
 
@@ -170,7 +170,7 @@ nav{
     transform: translateX(-50%);
     width: calc(100% - 80px);
     height: 1px;
-    background-color: #ffffff4f;
+    background-color: #ffffff1c;
 }
 #page3 .page3-text #line2{
     position: absolute;
@@ -179,7 +179,7 @@ nav{
     transform: translateX(-50%);
     width: 1px;
     height: 20%;
-    background-color: #ffffff4f;
+    background-color: #ffffff1c;
 }
 #page3 h2{
     font-size: 50px;
@@ -276,6 +276,28 @@ nav{
     z-index: 12;
     border-radius: 6px 6px 0 0;
 }
+/* 숫자 효과용 */
+.clock-box {
+    position: relative;
+    display: inline-block;
+}
+.clock-numbers {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1; 
+    pointer-events: none;
+}
+.clock-numbers span {
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: #39FF14;
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+}
+
 
 
 /* page4 vertical */
@@ -494,25 +516,49 @@ nav{
 }
 #page9 #ig91{
     position: absolute;
-    top: 15%;
-    left: 55%;
+    top: 10%;
+    left: 52%;
     width: 20%;
     z-index: 99;
     mix-blend-mode: difference;
 }
 #page9 #ig92{
     position: absolute;
-    bottom: 10%;
+    bottom: 17%;
     right: 0;
     width: 30%;
     z-index: 99;
 }
 #page9 #ig93{
     position: absolute;
-    bottom: -11%;
-    left: 0;
+    bottom: -2%;
+    left: 35%;
     width: 20%;
 }
+#page9 #ig94{
+    position: absolute;
+    top: 27%;
+    right: 10%;
+    width: 10%; 
+    z-index: 100;
+}
+#page9 #box-1,
+#page9 #box-2{
+    position: absolute;  
+    height: 30vh;
+    width: 30vh;
+    z-index: 100;
+}
+#page9 #box-1{
+    width: 25vh;
+    height: 25vh;
+    bottom: 10%;
+    left: 80%;
+    border-radius: 50%;
+    background: #FF10F0;
+}
+
+
 
 /* page10 */
 #page10{
@@ -682,9 +728,40 @@ nav{
     opacity: 0; 
     z-index: 0; 
 }
-#ii1:hover { background-color: #e05c0f; }
-#ii2:hover { background-color: #8a0fbb; }
-#ii3:hover { background-color: #4d4dff; }
+#ii1:hover {
+    background: linear-gradient(
+        to bottom,
+        #003300 0%,     /* 어두운 딥그린 */
+        #008000 15%,    /* 중간 녹색 */
+        #39ff14 30%,    /* 네온 그린 */
+        #66ff66 42%,    /* 밝은 형광 연두 */
+        #f5ffe5 50%,    /* 중앙 하이라이트 (거의 흰색 연두빛) */
+        #66ff66 58%,    /* 다시 밝은 형광 연두 */
+        #39ff14 70%,    /* 네온 그린 */
+        #008000 85%,    /* 중간 녹색 */
+        #003300 100%    /* 아주 어두운 딥그린 */
+    );
+    transition: background 0.8s ease;
+}
+
+
+#ii2:hover {
+    background: linear-gradient(
+        to bottom,
+        #120026 0%,     /* 아주 어두운 보라 */
+        #2e0055 15%,    /* 중간 어두운 보라 */
+        #5a0ea8 30%,    /* 보라 */
+        #a96dff 42%,    /* 조금 밝아짐 */
+        #c5b1f7 50%,    /* 은은한 연보라 하이라이트 */
+        #a96dff 58%,    /* 다시 보라 */
+        #5a0ea8 70%,    /* 중간 보라 */
+        #2e0055 85%,    /* 어두워짐 */
+        #120026 100%    
+    );
+}
+
+
+#ii3:hover { background-image: url(image/background3.png); }
 #ii1:hover::before, 
 #ii2:hover::before,
 #ii3:hover::before{ 

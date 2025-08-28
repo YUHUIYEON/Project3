@@ -177,6 +177,10 @@ setInterval(() => {
     mn.style.transform = `rotateZ(${mm}deg)`;
     sc.style.transform = `rotateZ(${ss}deg)`;
 })
+// 숫자 효과용
+
+
+
 
 
 // page4 vertical
@@ -292,11 +296,6 @@ function pg8(){
 pg8();
 
 
-
-
-
-
-
 // page9
 var over = document.querySelectorAll("#page9 .over")
 
@@ -313,6 +312,32 @@ over.forEach(function(ov){
         }
     })
 })
+// page9 - item1
+gsap.to("#ig94", {
+    rotation: 360,
+    ease: "none",
+    scrollTrigger: {
+        trigger: "#page9",
+        scroller: "#wrap",
+        start: "top bottom",  
+        end: "bottom top", 
+        scrub: true
+    }
+});
+// page9 - box
+gsap.to("#box-1", {
+    x: -400,
+    rotate: -850,
+    backgroundColor: "#4d4dff",
+    borderRadius: "0%",
+    scrollTrigger: {
+        trigger: "#page9",
+        scroller: "#wrap",
+        start: "top 20%",
+        end: "bottom top",
+        scrub: true
+    }
+});
 
 
 // page10
