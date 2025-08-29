@@ -24,14 +24,12 @@ nav{
     color: #fff;
 }
 .left-nav{
-    font-size: 1vw;
-    /* height: 2vh; */
+    font-size: 1rem;
     overflow: hidden;
     cursor: pointer;
 }
 .right-nav{
-    font-size: 1vw;
-    /* height: 2vh; */
+    font-size: 1rem;
     overflow: hidden;
     cursor: pointer;
 }
@@ -117,18 +115,6 @@ nav{
 .page1-element-border:hover{
     transform: rotate(-20deg) scale(1.05);
 }
-/* #pageItem1{
-    width: 12%;
-    position: absolute; 
-    right: 10%; 
-    top: 45%; 
-    animation: slowBlink 4s ease-in-out infinite; 
-}
-@keyframes slowBlink{
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-} */
-
 
 
 /* page2 */
@@ -158,6 +144,32 @@ nav{
     justify-content: center;
     background-color: #000000;
 }
+#page3 .page3-bg {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    /* transform: translate(-50%, -50%); */
+    object-fit: contain;
+    z-index: 0;
+    opacity: 0.7;
+    -webkit-mask-image: 
+        linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%), /* 좌우 */
+        linear-gradient(to bottom, black 0%, black 85%, transparent 100%);                  /* 하단 */
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    -webkit-mask-composite: destination-in; 
+    mask-image: 
+        linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%),
+        linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    mask-composite: intersect;
+}
+#page3 > *:not(.page3-bg) {
+    position: relative;
+    z-index: 1;
+}
 #page3 .page3-text{
     position: absolute;
     top: -30%;
@@ -168,7 +180,7 @@ nav{
     align-items: end;
     justify-content: space-between;
 }
-#page3 .page3-text h4{
+#page3 .page3-text p{
     font-weight: 200;
     font-size: 17px;
     color: #fff;
@@ -180,7 +192,7 @@ nav{
     transform: translateX(-50%);
     width: calc(100% - 80px);
     height: 1px;
-    background-color: #ffffff1c;
+    background-color: #ffffff60;
 }
 #page3 .page3-text #line2{
     position: absolute;
@@ -189,15 +201,15 @@ nav{
     transform: translateX(-50%);
     width: 1px;
     height: 20%;
-    background-color: #ffffff1c;
+    background-color: #ffffff60;
 }
-#page3 h2{
+#page3 .page3T1{
     font-size: 50px;
     color: #A9ABB5;
     font-weight: 500;
     line-height: 1;
 }
-#page3 h1{
+#page3 .page3T2{
     font-size: 130px;
     color: #ffffff;
     font-weight: 500;
@@ -217,10 +229,9 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(clock.png);
     background-size: cover;
-    background: #1f1f1f;
-    border: 4px solid #1f1f1f;
+    background: #020202;
+    border: 4px solid #020202;
     border-radius: 50%;
     box-shadow: 
         0 -15px 20px rgba(255, 255, 255, 0.15),
@@ -236,11 +247,7 @@ nav{
     border-radius: 50%;
     z-index: 1000;
 }
-.clock .hour,
-.clock .min, 
-.clock .sec{
-    position: absolute;
-}
+.clock .hour, .clock .min, .clock .sec {position: absolute;}
 .clock .hour, .hr{
     width: 160px;
     height: 160px;
@@ -286,28 +293,6 @@ nav{
     z-index: 12;
     border-radius: 6px 6px 0 0;
 }
-/* 숫자 효과용 */
-.clock-box {
-    position: relative;
-    display: inline-block;
-}
-.clock-numbers {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 1; 
-    pointer-events: none;
-}
-.clock-numbers span {
-    position: absolute;
-    font-size: 20px;
-    font-weight: bold;
-    color: #39FF14;
-    pointer-events: none;
-    user-select: none;
-    white-space: nowrap;
-}
-
 
 
 /* page4 vertical */
@@ -361,9 +346,8 @@ nav{
 
 /* page5 */
 #page5{
-    height: 50vh;
+    height: 30vh;
     width: 100%;
-    /* background-color: red; */
     padding: 0 40px;
     display: flex;
     align-items: center;
@@ -372,7 +356,7 @@ nav{
 #elem1{
     position: relative;
     width: 100%;
-    height: 18%;
+    height: 30%;
     display: flex;
     align-items: end;
     justify-content: space-between;
@@ -386,7 +370,7 @@ nav{
 #line5{
     height: 1px;
     width: 100%;
-    background-color: #ffffff4f;
+    background-color: #ffffff60;
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -395,7 +379,7 @@ nav{
 #line5-vt{
     height: 100%;
     width: 1px;
-    background-color: #ffffff4f;
+    background-color: #ffffff60;
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -404,63 +388,39 @@ nav{
 #line5-h{
     height: 1px;
     width: 100%;
-    background-color: #ffffff34;
+    background-color: #ffffff60;
     position: absolute;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
 }
-#elem3{
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 180px;
-}
-#elem3 h4{
-    font-size: 50px;
-    font-weight: 400;
-    color: #ffffff;
-}
-#linee{
-    position: absolute;
-    left: 30%;
-    width: 50%;
-    bottom: 0;
-    height: 1px;
-    background-color: #ffffff34;
-}
 
-/* page7 */
-#page7{
+
+/* page6 */
+#page6{
     height: 50vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden; 
 }
-#slide7{
+#slide6{
+    display: inline-flex;
+    gap: 24px;
     white-space: nowrap;
+    will-change: transform;
+    animation: slide6 20s linear infinite;
 }
-#slide7 h1{
+#slide6 p{
     font-size: 18vw;
     color: #494A4F;
-    font-weight:600;
-    display: inline-block;
-    margin-right: 20px;
-    animation-name: slide7;
-    animation-duration: 20s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    font-weight: 600;
+    margin: 0;
 }
-@keyframes slide7 {
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(calc(-100% - 24px));
-    }
+@keyframes slide6{
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 12px)); }
 }
 
 /* page8 */
@@ -569,50 +529,6 @@ nav{
 }
 
 
-
-/* page10 */
-#page10{
-    height: 55vh;
-    width: 100%;
-    background-color: #151519;
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-#page10 h4{
-    color: #ffffffcd;
-    font-size: 15px;
-    font-weight: 100;
-    margin: 10px 0;
-}
-#about{
-    position: relative;
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    width: 100%;
-    height: 95%;
-}
-#li1{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #ffffff5f;
-}
-#li2{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-    width: 1px;
-    height: 100%;
-    background-color: #ffffff5f;
-}
-
 /* page11 */
 #page11{
     position: relative;
@@ -626,24 +542,18 @@ nav{
     flex-direction: column;
     text-align: center;
 }
-#page11 h1{
+#page11 h2{
     color: #fff;
     font-size: 70px;
     font-weight: 600;
     margin-top: 250px;
 }
-#page11 p{
-    color: #fff;
-    font-size: 20px;
-    font-weight: 400;
-    margin-top: 28px;
-}
-#page11 h4{
+#page11 h3{
     font-size: 14px;
     font-weight: 200;
     color: #fff;
 }
-#page11 h2{
+#page11 h4{
     color: #fff;
     margin-top: 20px;
     font-weight: 300;
@@ -668,24 +578,9 @@ nav{
     overflow: hidden;
     transition: background-color 1s ease;
 }
-#ii1{
-    top: 20%;
-    left: 0%;
-    height: 50%;
-    width: 25%;
-}
-#ii2{
-    top: 30%;
-    left: 30%;
-    height: 60%;
-    width: 40%;
-}
-#ii3{
-    top: 50%;
-    right: 0;
-    height: 45%;
-    width: 27%;
-}
+#ii1{top: 20%; left: 0%; width: 25%; height: 50%;}
+#ii2{top: 30%; left: 30%; width: 40%; height: 60%;}
+#ii3{top: 50%; right: 0; width: 27%; height: 45%;}
 #ii1::before, #ii1::after,
 #ii2::before, #ii2::after{
     content: '';
@@ -696,30 +591,7 @@ nav{
     background-repeat: no-repeat;
     transition: opacity 1.2s ease, filter 1s ease;
 }
-#ii1::before{ 
-    background-image: url(image/front-White.png);  
-    opacity: 1; 
-    z-index: 0; 
-}
-#ii1::after{ 
-    background-image: url(image/front-White2.png); 
-    opacity: 0; 
-    transform: scale(1.1); 
-    z-index: 0; 
-}
-#ii2::before{ 
-    background-image: url(image/side-White2.png);  
-    opacity: 1; 
-    z-index: 0; 
-}
-#ii2::after{ 
-    background-image: url(image/side-White1.png);  
-    opacity: 0; 
-    transform: scale(0.9); 
-    z-index: 0; 
-}
-#ii3::before,
-#ii3::after {
+#ii3::before, #ii3::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -728,35 +600,29 @@ nav{
     background-size: 70%;   
     transition: opacity 1.2s ease, filter 1s ease;
 }
+#ii1::before{ 
+    background-image: url(image/front-White.png); opacity: 1; z-index: 0; 
+}
+#ii1::after{ 
+    background-image: url(image/front-White2.png); opacity: 0; z-index: 0;
+    transform: scale(1.1);  
+}
+#ii2::before{ 
+    background-image: url(image/side-White2.png); opacity: 1; z-index: 0; 
+}
+#ii2::after{ 
+    background-image: url(image/side-White1.png); opacity: 0; z-index: 0;
+    transform: scale(0.9); 
+}
 #ii3::before{ 
-    background-image: url(image/front-color1.png);  
-    opacity: 1; 
-    z-index: 0; 
+    background-image: url(image/front-color1.png); opacity: 1; z-index: 0; 
 }
 #ii3::after{ 
-    background-image: url(image/front-color2.png);  
-    opacity: 0; 
-    z-index: 0; 
+    background-image: url(image/front-color2.png); opacity: 0; z-index: 0; 
 }
-#ii1:hover{ background-image: url(image/background4.png); }
-
-#ii2:hover {
-    background: linear-gradient(
-        to bottom,
-        #120026 0%,     /* 아주 어두운 보라 */
-        #2e0055 15%,    /* 중간 어두운 보라 */
-        #5a0ea8 30%,    /* 보라 */
-        #a96dff 42%,    /* 조금 밝아짐 */
-        #c5b1f7 50%,    /* 은은한 연보라 하이라이트 */
-        #a96dff 58%,    /* 다시 보라 */
-        #5a0ea8 70%,    /* 중간 보라 */
-        #2e0055 85%,    /* 어두워짐 */
-        #120026 100%    
-    );
-}
-
-
-#ii3:hover { background-image: url(image/background3.png); }
+#ii1:hover{background-image: url(image/background4.png);}
+#ii2:hover{background-image: url(image/background5.png);}
+#ii3:hover{background-image: url(image/background6.png);}
 #ii1:hover::before, 
 #ii2:hover::before,
 #ii3:hover::before{ 
@@ -768,14 +634,6 @@ nav{
 #ii3:hover::after{ 
     opacity: 1; 
     filter: blur(0.1px); 
-}
-#ii1 h4, #ii1 h2,
-#ii2 h4, #ii2 h2,
-#ii3 h4, #ii3 h2{
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    transition: color 0.6s ease;
 }
 /* cursor */
 #page11{position: relative;}
@@ -889,7 +747,7 @@ nav{
     height: 100vh;
     width: 100%;
 }
-#page15 h1{
+#page15 p{
     font-size: 70px;
     font-weight: 700;
     line-height: 1.2;
@@ -975,7 +833,7 @@ nav{
 span{display: inline-block;}
 
 
-/* 스크롤바 */
+/* 스크롤바-바탕이 검은색이라 흰색으로 변경 */
 .c-scrollbar {width: 10px;}
 .c-scrollbar_thumb {
     background-color: #fff;

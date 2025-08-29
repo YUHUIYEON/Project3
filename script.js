@@ -134,25 +134,25 @@ function pg3(){
             scrub:2
         }
     });
-    gsap.from("#page3 h2", {
+    gsap.from("#page3 .page3T1", {
         y: 80,
         opacity: 0,
         duration: 1.0,
         ease: "power3.out",
         scrollTrigger: {
-            trigger: "#page3 h2",
+            trigger: "#page3 .page3T1",
             scroller: "#wrap",
             start: "top 85%",
             toggleActions: "play none none reverse"
         }
     });
-    gsap.from("#page3 h1", {
+    gsap.from("#page3 .page3T2", {
         y: 80,
         opacity: 0,
         duration: 1.0,
         ease: "power3.out",
         scrollTrigger: {
-            trigger: "#page3 h1",
+            trigger: "#page3 .page3T2",
             scroller: "#wrap",
             start: "top 85%",
             toggleActions: "play none none reverse"
@@ -177,7 +177,14 @@ setInterval(() => {
     mn.style.transform = `rotateZ(${mm}deg)`;
     sc.style.transform = `rotateZ(${ss}deg)`;
 })
-// 숫자 효과용
+// page3 배경
+function pg3Video(){
+    const video = document.querySelector("#page3 .page3-bg");
+    if(!video) return;
+
+    video.playbackRate = 0.7; // 1보다 작으면 느리게, 1보다 크면 빠르게
+}
+pg3Video();
 
 
 
@@ -242,22 +249,7 @@ function pg5(){
     },"h")
     .from("#line5-h",{
         width:"0",
-    },"h")    
-    
-    var tl7 = gsap.timeline({
-        scrollTrigger:{
-            trigger:"#elem3",
-            scroller:"body",
-            // markers:true,
-            start:"top 80%",
-            end:"top 70%",
-            scrub:2,
-        }
-    })
-    tl7
-    .from("#linee",{
-        width:"0",
-    })    
+    },"h")      
 }
 pg5()
 
@@ -278,6 +270,7 @@ function pg8(){
         xPercent:-50, yPercent:-50, top:"50%", left:"50%"
     });
 
+    //출발
     tl.from(["#ig1","#ig2","#ig3","#ig4","#ig5"], {
         x:0, y:0, scale:0, opacity:0,
         transformOrigin:"50% 50%",
@@ -285,8 +278,8 @@ function pg8(){
         stagger:0,
         immediateRender:false
     }, 0)
-
-    // 순차적으로 시계방향으로 퍼지기
+    
+    //현재 상태 → 지정한 상태로 애니메이션
     .to("#ig1", {x:-530, y:-10, opacity:1, ease:"power2.out"}, 0.05)  // 가까운 러닝 코스 추천해줘
     .to("#ig2", {x: 420, y:-120, opacity:1, ease:"power2.out"}, 0.07)  // 주변 스파게티 맛집 찾아줘
     .to("#ig3", {x: 350, y: 200, opacity:1, ease:"power2.out"}, 0.09)  // 내일 오전 6시 알람 맞춰줘

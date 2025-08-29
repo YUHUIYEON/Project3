@@ -10,48 +10,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="wrap">
-    <nav>
-        <div class="left-nav">
-            <h1 class="logo">Watch 8</h1>
-        </div>
-        <div class="right-nav">
-            <h2>Unique product</h2>
-        </div>
-    </nav>
-
+<main id="wrap">
+    <header>
+        <nav>
+            <div class="left-nav">
+                <h1 class="logo">Watch 8</h1>
+            </div>
+            <div class="right-nav">
+                <h2>Iconic Edition</h2>
+            </div>
+        </nav>
+    </header>
     <!-- page1 -->
-    <div id="page1">
+    <section id="page1">
         <div class="bg"></div>
-        <h1 class="title">Watch 8</h1>
+        <p class="title">Watch 8</p>
         <p class="sd">scroll down</p>
         <div class="page1-element">
             <div class="page1-element-border"></div>
-            <p>
-                View All <br/>
-                Projects
-            </p>
+            <p>View All<br/>Products</p>
         </div>
-        <!-- <img id="pageItem1" src="image/item2.png" alt=""> -->
-    </div>
-    <!-- page1 end -->
-
+    </section>
     <!-- page2 -->
-    <div id="page2">
+    <section id="page2">
         <video src="image/videoplayback.mp4" autoplay muted loop></video>
-    </div>
-    <!-- page2 end -->
-
+    </section>
     <!-- page3 -->
-    <div id="page3">
+    <section id="page3">
+        <video class="page3-bg" src="image/wave-background.mp4" autoplay muted loop playsinline></video>
         <div class="page3-text">
-            <h4>Watch 8</h4>
-            <h4>Most Essential</h4>
+            <p>Watch 8</p>
+            <p>Most Essential</p>
             <div id="line1"></div>
             <div id="line2"></div>
         </div>
-        <h2>시계 그 이상의</h2>
-        <h1>Watch</h1>
+        <p class="page3T1">시계 그 이상의</p>
+        <p class="page3T2">Watch</p>
         <div class="clock-box">
             <div class="halo" aria-hidden="true"></div>
             <div class="clock">
@@ -65,15 +59,11 @@
                     <div class="sc" id="sc"></div>
                 </div>
             </div>
-            <!-- 숫자 효과용-->
-            <div class="clock-numbers"></div>
         </div>
         <div id="line"></div>
-    </div>
-    <!-- page3 end -->
-
+    </section>
     <!-- page4 vertical -->
-    <div id="page4">
+    <section id="page4">
         <div class="wrapper">
             <div class="list">
                 <div class="item">
@@ -105,36 +95,25 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- page4 end -->
-
+    </section>
     <!-- page5 -->
-    <div id="page5">
+    <section id="page5">
         <div id="elem1">
             <h4>Watch 8</h4>
             <h4>Upgrade your life</h4>
             <div id="line5"></div>
             <div id="line5-vt"></div>
         </div>
-        <div id="elem3">
-            <h4>We will help <br> you to implement</h4>
-            <h4>any design <br>solutions</h4>
-            <div id="linee"></div>
+    </section>
+    <!-- page6--> 
+    <section id="page6">
+        <div id="slide6">
+            <p>Smart life, every day! </p>
+            <p>Smart life, every day! </p>
         </div>
-    </div>
-    <!-- page5 end -->
-
-    <!-- page7--> 
-    <div id="page7">
-        <div id="slide7">
-            <h1>Smart life, every day</h1>
-            <h1>Smart life, every day</h1>
-        </div>
-    </div>
-    <!-- page7 end -->
-
+    </section>
     <!-- page8--> 
-    <div id="page8">
+    <section id="page8">
         <p>일상의 주도권을<br>나에게</p>
         <div>
             <img id="ig1" src="image/hey1.png" alt="가까운 러닝 코스 추천해줘">
@@ -143,11 +122,9 @@
             <img id="ig4" src="image/hey4.png" alt="방문 온 문자에 답장 ‘알겠어요’라고 해줘">
             <img id="ig5" src="image/hey5.png" alt="이번주 상영중인 영화 추천해줘">
         </div>
-    </div>
-    <!-- page8 end -->
-
+    </section>
     <!-- page9--> 
-    <div id="page9">
+    <section id="page9">
         <img id="ig91" data-scroll data-scroll-speed="5" src="image/front-Black.png" alt="">
         <img id="ig92" data-scroll data-scroll-speed="4" src="image/front-White.png" alt="">
         <img id="ig93" data-scroll data-scroll-speed="4" src="image/front-Black.png" alt="">
@@ -181,61 +158,44 @@
             <div class="over"></div>
             <h1>healthier!</h1>
         </div>
-    </div>
-    <!-- page9 end -->
-
-    <!-- page10--> 
-    <div id="page10">
-        <h4>Advantages and facts</h4>
-        <div id="about">
-            <div id="li1"></div>
-            <div id="li2"></div>
-            <h4>About company</h4>
-            <h4>Services</h4>
-        </div>
-    </div>
-    <!-- page10 end -->
-
+    </section>
     <!-- page11--> 
-    <div id="page11">
-        <h1>더 가벼운 디자인<br>얇은 착용감</h1>
-        <p>Lighter design slimmer fit</p>
+    <section id="page11">
+        <h2>더 가벼운 디자인<br>얇은 착용감</h2>
         <div id="ii1" data-scroll data-scroll-speed="2">
-            <h4>01</h4>
-            <h2>
-                현재의 식습관이 <br>
-                얼마나 건강한지 <br>
-                한눈에 확인하고, <br>
-                저속 노화를 위한 <br>
+            <h3>01</h3>
+            <h4>
+                현재의 식습관이<br>
+                얼마나 건강한지<br>
+                한눈에 확인하고,<br>
+                저속 노화를 위한<br>
                 생활 습관을 실천해 보세요.
-            </h2>
+            </h4>
         </div>
         <div id="ii2" data-scroll data-scroll-speed="4">
-            <h4>02</h4>
-            <h2>
-                다이내믹 러그 시스템으로 <br>
-                손목과 워치가 더욱 밀착되어 <br>
+            <h3>02</h3>
+            <h4>
+                다이내믹 러그 시스템으로<br>
+                손목과 워치가 더욱 밀착되어<br>
                 흔들림 없는 안정감을 느낄 수 있습니다.
-            </h2>
+            </h4>
         </div>
         <div id="ii3"data-scroll data-scroll-speed="3">
-            <h4>03</h4>
-            <h2>
-                꼭 알아야 할 정보는 <br>
-                멀티 인포 타일로 <br>
-                한눈에 확인할 수 있고, <br>
-                선택한 앱의 핵심 정보를 <br>
+            <h3>03</h3>
+            <h4>
+                꼭 알아야 할 정보는<br>
+                멀티 인포 타일로<br>
+                한눈에 확인할 수 있고,<br>
+                선택한 앱의 핵심 정보를<br>
                 바로 보여줍니다.
-            </h2>
+            </h4>
         </div>
         <div class="cursor">
                 <div class="cursor-ball"></div>
         </div>
-    </div> 
-    <!-- page11 end -->
-
+    </section>
     <!-- page12 horizontal -->
-    <div class="page12">
+    <section class="page12">
         <div class="wrapper">
             <div role="list" class="list">
                 <div class="item">
@@ -275,19 +235,15 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- page12 end -->
-
+    </section>
     <!-- page14 -->
-    <div id="page14">
-            <div id="line14"></div>
-            <div id="line14-v"></div>
-    </div>
-    <!-- page14 end -->
-
+    <section id="page14">
+        <div id="line14"></div>
+        <div id="line14-v"></div>
+    </section>
     <!-- page15 -->
-    <div id="page15">
-        <h1>갤럭시 웨어러블과 함께, <br>일상을 더 건강하게</h1>
+    <section id="page15">
+        <p>갤럭시 웨어러블과 함께, <br>일상을 더 건강하게</p>
         <div class="smooth-content">
             <div class="img-group">
                 <img src="image/sport-band2-1.png" data-speed="1.6"></img>
@@ -297,11 +253,9 @@
                 <img src="image/sport-band2-5.png" data-speed="1.9"></img>
             </div>
         </div>
-    </div>
-    <!-- page15 end -->
-
+    </section>
     <!-- footer -->
-    <div id="footer">
+    <footer id="footer">
         <div id="fl"></div>
         <div id="foot">
             <h1>Watch 8</h1>
@@ -310,8 +264,8 @@
             <h2>©2025</h2>
             <h2>Made by <span> yh</span></h2>
         </div>
-    </div>
-</div>
+    </footer>
+</main>
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js" integrity="sha512-OzC82YiH3UmMMs6Ydd9f2i7mS+UFL5f977iIoJ6oy07AJT+ePds9QOEtqXztSH29Nzua59fYS36knmMcv79GOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
