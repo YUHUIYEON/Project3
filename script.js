@@ -318,11 +318,6 @@ function pg8(){
 pg8();
 
 
-
-
-
-
-
 // page9
 var over = document.querySelectorAll("#page9 .over")
 
@@ -421,7 +416,19 @@ function cursorFunc() {
     });
 }
 cursorFunc();
-
+// page11 모바일: 카드 클릭 시 해당 카드만 토글
+(function(){
+    if(window.innerWidth > 768) return;
+    const cards = Array.from(document.querySelectorAll('#page11 [id^="ii"]'));
+    if(!cards.length) return;
+    cards.forEach(card=>{
+        card.addEventListener('click', ()=>{
+        const isOpen = card.classList.contains('show-text');
+        cards.forEach(c=>c.classList.remove('show-text'));
+        if(!isOpen) card.classList.add('show-text');
+        }, {passive:true});
+    });
+})();
 
 
 
@@ -503,38 +510,33 @@ gsap.utils.toArray("#page15 .img-group img").forEach((el) => {
 
 
 // footer
-var tll = gsap.timeline({
-    scrollTrigger:{
-        trigger:"#footer",
-        scroller:"#wrap",
-        // markers:true,
-        start:"top 80%",
-        end:"top 60%",
-        scrub:2,
-    }
-})
-tll
-.from("#fl",{
-    height:"0"
-},"h")
-var clutter =""
-document.querySelector("#footer h1").textContent.split("").forEach(function(letter){
-    clutter += `<span>${letter}</span>`
-})
-document.querySelector("#footer h1").innerHTML = clutter
+// footer
+if(window.innerWidth > 768){   // PC 전용
+    var tll = gsap.timeline({
+        scrollTrigger:{
+            trigger:"#footer",
+            scroller:"#wrap",
+            start:"top 80%",
+            end:"top 60%",
+            scrub:2,
+        }
+    })
+    tll.from("#fl",{ height:"0" },"h")
 
-var tle = gsap.timeline({
-    scrollTrigger:{
-        trigger:"#foot",
-        scroller:"#wrap",
-        // markers:true,
-        start:"top 60%",
-        end:"top 40%",
-        scrub:2,
-    }
-})
-tle
-.from("#foot h1 span",{
-    y:"-100%",
-    stagger:-0.2
-})
+    var clutter =""
+    document.querySelector("#footer h2").textContent.split("").forEach(function(letter){
+        clutter += `<span>${letter}</span>`
+    })
+    document.querySelector("#footer h2").innerHTML = clutter
+
+    var tle = gsap.timeline({
+        scrollTrigger:{
+            trigger:"#foot",
+            scroller:"#wrap",
+            start:"top 60%",
+            end:"top 40%",
+            scrub:2,
+        }
+    })
+    tle.from("#foot h2 span",{ y:"-100%", stagger:-0.2 })
+}

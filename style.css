@@ -512,20 +512,15 @@ nav{
     width: 10%; 
     z-index: 100;
 }
-#page9 #box-1,
-#page9 #box-2{
-    position: absolute;  
-    height: 30vh;
-    width: 30vh;
-    z-index: 100;
-}
 #page9 #box-1{
-    width: 25vh;
-    height: 25vh;
+    position: absolute;  
+    width: 15%;        
+    aspect-ratio: 1/1;  
     bottom: 10%;
     left: 80%;
     border-radius: 50%;
     background: #FF10F0;
+    z-index: 100;
 }
 
 
@@ -796,18 +791,18 @@ nav{
     align-items: center;
     justify-content: space-between;
 }
-#footer #bottom h2{
+#footer #bottom h3{
     font-weight: 300;
     color: #ffffff81;
 }
-#footer #bottom h2 span{color: #ffffffde;}
+#footer #bottom h3 span{color: #ffffffde;}
 #foot{
     width: 100%;
     display: flex;
     align-items: end;
     overflow: hidden;    
 }
-#foot h1{
+#foot h2{
     font-size: 25vw;
     font-weight: 500;
     font-family: aty;
@@ -824,12 +819,12 @@ nav{
     height: 50%;
     background-color: #ffffff5f;
 }
-#footer h3{
+/* #footer h3{
     font-weight: 300;
     color: #ffffff5d;
     margin-bottom: 150px;
     font-size: 23px;
-}
+} */
 span{display: inline-block;}
 
 
@@ -841,15 +836,16 @@ span{display: inline-block;}
 }
 
 
-/* ----------------------------- */
-/* --- 공통: 모바일 뷰포트 안전 --- */
+/* ---------모바일---------- */
 @supports (height: 100svh){
     #page1, #page2, #page3, .page12, #page15, #footer { height: 100svh; }
     /* #page5, #page6  { height: 20svh; } */
-    
 }
 
-/* page3 헤드라인 */
+/* page2 */
+#page2 video{ width: clamp(40%, 60vw, 100%); height: 100%; object-fit: cover; }
+
+/* page3 */
 #page3 .page3T1{ font-size: clamp(24px, 5vw, 50px); }
 #page3 .page3T2{ font-size: clamp(48px, 13vw, 130px); letter-spacing: clamp(-1px, -0.6vw, -5px); }
 
@@ -886,7 +882,7 @@ span{display: inline-block;}
     }
 }
 
-/* --- 타이포/여백: 고정 px → clamp --- */
+/*page8 */
 @media (max-width: 768px){
     #page8{
         height: 80svh;
@@ -901,26 +897,90 @@ span{display: inline-block;}
     }
 }
 
-
-/* page9 헤드라인 */
+/* page9 */
 #page9 h1{ font-size: clamp(28px, 8vw, 130px); letter-spacing: clamp(-1px, -0.4vw, -3px); }
 
-/* page15 카피 */
-#page15 p{ font-size: clamp(22px, 6.5vw, 70px); margin: 0 4vw 0 8vw; }
-
-
-
-
-
-/* page12 텍스트/미디어도 유동 */
-.page12 .item_content{
-    left: clamp(16px, 10vw, 10%);
-    width: clamp(260px, 32vw, 32%);
-    transform: translateY(-30%);
+/* page11 */
+@media (max-width: 768px){
+    #page11 [id^="ii"] h3,
+    #page11 [id^="ii"] h4{
+        opacity: 0;
+        transition: opacity .35s ease;
+        pointer-events: none;
+        position: relative;
+        z-index: 1;
+    }
+    #page11 [id^="ii"].show-text h3,
+    #page11 [id^="ii"].show-text h4{
+        opacity: 1;
+        pointer-events: auto;
+    }
+    #page11 [id^="ii"]::after{ display: none !important; }
+    #page11 [id^="ii"]::before{ opacity: 1 !important; transition: opacity .35s ease; }
+    #page11 [id^="ii"]:hover{ background-image: none !important; }
+    #page11 [id^="ii"]:hover::before{ opacity: 1 !important; filter: none !important; }
+    #page11 [id^="ii"].show-text::before{ opacity: 0 !important; }    
+    #page11 h2{
+        font-size: clamp(24px, 8vw, 70px); 
+        margin-top: clamp(40px, 15vw, 250px);
+    }
+    #page11 h3{ font-size: clamp(8px, 2.8vw, 10px); }
+    #page11 h4{ font-size: clamp(10px, 3.2vw, 12px); }
 }
-.page12 .item_content h2{ font-size: clamp(26px, 6vw, 64px); }
-.page12 .item_content p{ width: clamp(220px, 70%, 70%); font-size: clamp(12px, 2.6vw, 14px); }
-.page12 .item_media{ width: clamp(58%, 45vw, 45%); left: clamp(52%, 70%, 70%); }
 
-/* page2 비디오 초기폭도 유동 */
-#page2 video{ width: clamp(40%, 60vw, 100%); height: 100%; object-fit: cover; }
+/* page12 */
+@media (max-width: 768px){
+    .page12 .item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: auto;  
+        min-height: 70vh;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    .page12 .item_content{
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 85%;
+        flex: 0 0 auto;
+        padding: 20px;
+        margin: 40px auto 20px;
+    }
+    .page12 .item_content h2{
+        font-size: clamp(18px, 5.5vw, 24px);
+    }
+    .page12 .item_content p{
+        font-size: clamp(12px, 3vw, 14px);
+        width: 85%;
+    }
+    .page12 .item_media{
+        position: relative;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        flex: 0 0 auto;
+        width: 80%;
+        max-height: 220px;
+        object-fit: cover;
+        margin: 20px 0 40px;
+        display: block;
+    }
+}
+
+/* page15 */
+#page15 p{ font-size: clamp(22px, 6.5vw, 70px); margin: 0 4vw 0 8vw; }
+@media (max-width: 768px){
+    #page15 .img-group {
+        width: 100%;
+        justify-content: center;
+        gap: 8px;
+    }
+    #page15 .img-group img {
+        flex: 0 0 auto;
+        width: 20%;
+        margin: 0;
+    }
+}
