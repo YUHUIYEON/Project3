@@ -510,7 +510,6 @@ gsap.utils.toArray("#page15 .img-group img").forEach((el) => {
 
 
 // footer
-// footer
 if(window.innerWidth > 768){   // PC 전용
     var tll = gsap.timeline({
         scrollTrigger:{
