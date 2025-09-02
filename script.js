@@ -255,39 +255,68 @@ pg5()
 
 
 // page8
+// page8
 function pg8(){
-    const tl = gsap.timeline({
-        scrollTrigger:{
-            trigger:"#page8",
-            scroller:"#wrap",
-            start:"top 90%",
-            end:"top -10%",
-            scrub:7
-        }
-    });
+    const mm = gsap.matchMedia();
 
     gsap.set(["#ig1","#ig2","#ig3","#ig4","#ig5"], {
-        xPercent:-50, yPercent:-50, top:"50%", left:"50%"
+        xPercent:-50, yPercent:-50, top:"50%", left:"50%", opacity:0
     });
 
-    //출발
-    tl.from(["#ig1","#ig2","#ig3","#ig4","#ig5"], {
-        x:0, y:0, scale:0, opacity:0,
-        transformOrigin:"50% 50%",
-        ease:"power2.out",
-        stagger:0,
-        immediateRender:false
-    }, 0)
-    
-    //현재 상태 → 지정한 상태로 애니메이션
-    .to("#ig1", {x:-530, y:-10, opacity:1, ease:"power2.out"}, 0.05)  // 가까운 러닝 코스 추천해줘
-    .to("#ig2", {x: 420, y:-120, opacity:1, ease:"power2.out"}, 0.07)  // 주변 스파게티 맛집 찾아줘
-    .to("#ig3", {x: 350, y: 200, opacity:1, ease:"power2.out"}, 0.09)  // 내일 오전 6시 알람 맞춰줘
-    .to("#ig4", {x:-320, y: 300, opacity:1, ease:"power2.out"}, 0.11)  // 방문 온 문자에 답장 ‘알겠어요
-    .to("#ig5", {x:   0, y:-250, opacity:1, ease:"power2.out"}, 0.13) // 이번주 상영중인 영화 추천해줘
+    // 모바일
+    mm.add("(max-width: 768px)", () => {
+        const tl = gsap.timeline({
+            scrollTrigger:{
+                trigger:"#page8",
+                scroller:"#wrap",
+                start:"top 90%",
+                end:"top -10%",
+                scrub:7
+            }
+        });
+
+        //출발
+        tl.set(["#ig1","#ig2","#ig3","#ig4","#ig5"], {opacity:1}, 0)
+
+        //현재 상태 → 지정한 상태로 애니메이션 (모바일)
+        .to("#ig1", {x:-120, y:-30,  opacity:1, ease:"power2.out"}, 0.05)   // 가까운 러닝 코스 추천해줘
+        .to("#ig2", {x: 100, y:-60, opacity:1, ease:"power2.out"}, 0.07)   // 주변 스파게티 맛집 찾아줘
+        .to("#ig3", {x: 90,  y:80,  opacity:1, ease:"power2.out"}, 0.09)   // 내일 오전 6시 알람 맞춰줘
+        .to("#ig4", {x:-100, y:90,  opacity:1, ease:"power2.out"}, 0.11)   // 방문 온 문자에 답장 ‘알겠어요
+        .to("#ig5", {x:   0, y:-100, opacity:1, ease:"power2.out"}, 0.13);  // 이번주 상영중인 영화 추천해줘
+    });
+
+    // PC
+    mm.add("(min-width: 769px)", () => {
+        const tl = gsap.timeline({
+            scrollTrigger:{
+                trigger:"#page8",
+                scroller:"#wrap",
+                start:"top 90%",
+                end:"top -10%",
+                scrub:7
+            }
+        });
+
+        //출발
+        tl.from(["#ig1","#ig2","#ig3","#ig4","#ig5"], {
+            x:0, y:0, scale:0, opacity:0,
+            transformOrigin:"50% 50%",
+            ease:"power2.out",
+            stagger:0,
+            immediateRender:false
+        }, 0)
+        
+        //현재 상태 → 지정한 상태로 애니메이션 (PC)
+        .to("#ig1", {x:-530, y:-10, opacity:1, ease:"power2.out"}, 0.05)  // 가까운 러닝 코스 추천해줘
+        .to("#ig2", {x: 420, y:-120, opacity:1, ease:"power2.out"}, 0.07)  // 주변 스파게티 맛집 찾아줘
+        .to("#ig3", {x: 350, y: 200, opacity:1, ease:"power2.out"}, 0.09)  // 내일 오전 6시 알람 맞춰줘
+        .to("#ig4", {x:-320, y: 300, opacity:1, ease:"power2.out"}, 0.11)  // 방문 온 문자에 답장 ‘알겠어요
+        .to("#ig5", {x:   0, y:-250, opacity:1, ease:"power2.out"}, 0.13); // 이번주 상영중인 영화 추천해줘
+    });
 }
 pg8();
-// 모바일용
+
 
 
 
