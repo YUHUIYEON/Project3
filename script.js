@@ -287,6 +287,11 @@ function pg8(){
     .to("#ig5", {x:   0, y:-250, opacity:1, ease:"power2.out"}, 0.13) // 이번주 상영중인 영화 추천해줘
 }
 pg8();
+// 모바일용
+
+
+
+
 
 
 // page9

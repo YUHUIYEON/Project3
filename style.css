@@ -839,3 +839,88 @@ span{display: inline-block;}
     background-color: #fff;
     border-radius: 4px;
 }
+
+
+/* ----------------------------- */
+/* --- 공통: 모바일 뷰포트 안전 --- */
+@supports (height: 100svh){
+    #page1, #page2, #page3, .page12, #page15, #footer { height: 100svh; }
+    #page5, #page6  { height: 20svh; }
+    
+}
+
+/* page3 헤드라인 */
+#page3 .page3T1{ font-size: clamp(24px, 5vw, 50px); }
+#page3 .page3T2{ font-size: clamp(48px, 13vw, 130px); letter-spacing: clamp(-1px, -0.6vw, -5px); }
+
+/* page4 */
+@media (max-width: 768px){
+    #page4 .item{
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    #page4 .item_content{
+        flex: 0 0 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+    }
+    #page4 .item_media{
+        flex: 0 0 50%;
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+        display: block;
+    }
+    #page4 .item_content h2{
+        font-size: clamp(22px, 7vw, 32px);
+    }
+    #page4 .item_content p{
+        font-size: clamp(12px, 3.5vw, 14px);
+        width: 90%;
+    }
+}
+
+/* --- 타이포/여백: 고정 px → clamp --- */
+@media (max-width: 768px){
+    #page8{
+        height: 80svh;
+        background-size: 150%;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    #page8 p{
+        font-size: clamp(28px, 8vw, 80px);
+        margin-left: 8vw;
+        margin-top: 12vw;
+    }
+}
+
+
+/* page9 헤드라인 */
+#page9 h1{ font-size: clamp(28px, 8vw, 130px); letter-spacing: clamp(-1px, -0.4vw, -3px); }
+
+/* page15 카피 */
+#page15 p{ font-size: clamp(22px, 6.5vw, 70px); margin: 0 4vw 0 8vw; }
+
+
+
+
+
+/* page12 텍스트/미디어도 유동 */
+.page12 .item_content{
+    left: clamp(16px, 10vw, 10%);
+    width: clamp(260px, 32vw, 32%);
+    transform: translateY(-30%);
+}
+.page12 .item_content h2{ font-size: clamp(26px, 6vw, 64px); }
+.page12 .item_content p{ width: clamp(220px, 70%, 70%); font-size: clamp(12px, 2.6vw, 14px); }
+.page12 .item_media{ width: clamp(58%, 45vw, 45%); left: clamp(52%, 70%, 70%); }
+
+/* page2 비디오 초기폭도 유동 */
+#page2 video{ width: clamp(40%, 60vw, 100%); height: 100%; object-fit: cover; }
