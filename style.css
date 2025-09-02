@@ -2,7 +2,7 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
 body{font-family: 'Pretendard', 'Marck Script', cursive, sans-serif;}
 html, body{width: 100%; height: 100%; background-color: #000;}
-#main{width: 100%; overflow: hidden;}
+#wrap{width: 100%; overflow: hidden;}
 
 
 /* logo */
@@ -845,7 +845,7 @@ span{display: inline-block;}
 /* --- 공통: 모바일 뷰포트 안전 --- */
 @supports (height: 100svh){
     #page1, #page2, #page3, .page12, #page15, #footer { height: 100svh; }
-    #page5, #page6  { height: 20svh; }
+    /* #page5, #page6  { height: 20svh; } */
     
 }
 
