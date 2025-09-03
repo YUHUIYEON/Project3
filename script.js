@@ -171,7 +171,6 @@ setInterval(() => {
     let hh = day.getHours() * 30;
     let mm = day.getMinutes() * deg;
     let ss = day.getSeconds() * deg;
-    console.log(hr);
 
     hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
     mn.style.transform = `rotateZ(${mm}deg)`;
@@ -539,3 +538,10 @@ if(window.innerWidth > 768){   // PC 전용
     })
     tle.from("#foot h2 span",{ y:"-100%", stagger:-0.2 })
 }
+(function(){
+    const h2 = document.querySelector('#footer h2');
+    if(!h2) return;
+    if(window.innerWidth <= 768 && h2.querySelector('span')){
+        h2.textContent = h2.textContent; // 분할(span) 제거
+    }
+})();
