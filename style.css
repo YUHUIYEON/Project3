@@ -511,7 +511,7 @@ nav{
 }
 #page9 #box-1{
     position: absolute;  
-    width: 15%;        
+    width: 10%;        
     aspect-ratio: 1/1;  
     bottom: 10%;
     left: 80%;
@@ -717,7 +717,7 @@ nav{
 #line14{
     width: 100%;
     height: 1px;
-    background-color: #ffffff5f;
+    background-color: #ffffff60;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -726,7 +726,7 @@ nav{
 #line14-v{
     width: 1px;
     height: 30%;
-    background-color: #ffffff5f;
+    background-color: #ffffff60;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -812,8 +812,8 @@ nav{
     left: 50%;
     transform: translateX(-50%);
     width: 1px;
-    height: 50%;
-    background-color: #ffffff5f;
+    height: 40%;
+    background-color: #ffffff60;
 }
 span{display: inline-block;}
 
@@ -870,7 +870,7 @@ span{display: inline-block;}
 
     /*page8 */
     #page8{
-        height: 40svh;
+        height: 60vh;
         background-size: 150%;
         background-position: center center;
         background-repeat: no-repeat;
@@ -949,12 +949,11 @@ span{display: inline-block;}
     }
 
     /* page15 */
-    #page15{height: 70vh;} 
+    #page15{height: 80vh !important;} 
+    #page15 .smooth-content{ height: auto !important; }
     #page15 .img-group{
         width: 100%;
-        top: 50vh;  
-        left: 50%;
-        /* transform: translate(-50%, -50%); */
+        height: 20vh;  
     }   
     #page15 .img-group img{
         width: 15%;
@@ -964,34 +963,16 @@ span{display: inline-block;}
     }
 
     /* footer */
-    #foot{ 
-        height: 30vh;
-        overflow: visible; 
-        align-items: center; 
-    }
+    #footer{height: 70vh;}
     #foot h2{
-        font-size: 12vh;
-        line-height: 1.05;
-        white-space: nowrap;
-        width: max-content;
-        margin: 0 auto;
-        /* letter-spacing: clamp(-10px, -1.2vw, -2px); */
-        transform: none !important;
+        font-size: 11vh;
+        letter-spacing: -8px;
     }
     #foot h2 span{
         transform: none !important;
         display: inline; 
     }
-    #fl{
-    position: absolute;
-    top: 0;
-    left: 50%;
-    /* transform: translateX(-50%); */
-    width: 1px;
-    height: 30%;
-    background-color: #ffffff5f;
-    padding: 0;
-}
+    #fl{height: 50%;}
 }
 
 /* page2 */

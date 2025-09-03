@@ -433,9 +433,6 @@ cursorFunc();
 })();
 
 
-
-
-
 // page12 horizontal
 function initPage12(section, items) {
     items.forEach((item, index) => {
@@ -506,8 +503,6 @@ gsap.utils.toArray("#page15 .img-group img").forEach((el) => {
         }
     });
 });
-
-
 
 
 // footer
