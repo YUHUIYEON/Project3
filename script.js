@@ -415,20 +415,22 @@ function cursorFunc() {
     });
 }
 cursorFunc();
-// page11 모바일: 카드 클릭 시 해당 카드만 토글
+// page11 모바일
 (function(){
-    if(window.innerWidth > 768) return;
     const cards = Array.from(document.querySelectorAll('#page11 [id^="ii"]'));
     if(!cards.length) return;
-    cards.forEach(card=>{
-        card.addEventListener('click', ()=>{
-        const isOpen = card.classList.contains('show-text');
+
+    const onTap = (e)=>{
+        const card = e.currentTarget;
+        const open = card.classList.contains('show-text');
         cards.forEach(c=>c.classList.remove('show-text'));
-        if(!isOpen) card.classList.add('show-text');
-        }, {passive:true});
+        if(!open) card.classList.add('show-text');
+    };
+
+    cards.forEach(card=>{
+        card.addEventListener('pointerup', onTap, {passive:true});
     });
 })();
-
 
 
 
