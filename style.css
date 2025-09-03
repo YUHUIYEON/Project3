@@ -200,16 +200,16 @@ nav{
     background-color: #ffffff60;
 }
 #page3 .page3T1{
-    font-size: 50px;
+    font-size: clamp(24px, 5vw, 50px);
     color: #A9ABB5;
     font-weight: 500;
     line-height: 1;
 }
 #page3 .page3T2{
-    font-size: 130px;
+    font-size: clamp(48px, 13vw, 130px); 
+    letter-spacing: clamp(-1px, -0.6vw, -5px); 
     color: #ffffff;
     font-weight: 500;
-    letter-spacing: -5px;
     margin-bottom: 50px;
     z-index: 3;
 }
@@ -460,13 +460,12 @@ nav{
     padding-bottom: 300px;
     overflow: hidden;
 }
-#page9 h1{
-    font-size:8vw;
+#page9 p{
+    font-size: clamp(28px, 8vw, 130px); 
+    letter-spacing: clamp(-1px, -0.4vw, -3px); 
     line-height: 1;
     color: #fff;
     font-weight: 500;
-    font-family: aty;
-    letter-spacing: -3px;
 }
 #page9 .over{
     position: absolute;
@@ -536,21 +535,21 @@ nav{
     text-align: center;
 }
 #page11 h2{
+    font-size: clamp(24px, 8vw, 70px); 
+    margin-top: clamp(40px, 15vw, 250px);
     color: #fff;
-    font-size: 70px;
     font-weight: 600;
-    margin-top: 250px;
 }
 #page11 h3{
-    font-size: 14px;
+    font-size: clamp(8px, 2.8vw, 14px);
     font-weight: 200;
     color: #fff;
 }
 #page11 h4{
+    font-size: clamp(10px, 3.2vw, 18px);
     color: #fff;
     margin-top: 20px;
     font-weight: 300;
-    font-size: 18px;
 }
 #page11 img{
     height: 100%;
@@ -741,10 +740,10 @@ nav{
     width: 100%;
 }
 #page15 p{
-    font-size: 70px;
+    font-size: clamp(22px, 6.5vw, 70px); 
+    margin: 0 4vw 0 8vw;;
     font-weight: 700;
     line-height: 1.2;
-    margin: 0 20px 0 120px;
     color: #fff;
 }
 .smooth-content{
@@ -829,28 +828,13 @@ span{display: inline-block;}
 
 /* ---------모바일---------- */
 @media (max-width: 768px){
+    /* page1 */
     #page1 .title{
         transform: translate(-150px, -300px);  
         /* position: relative; */
     }
-}
 
-/* page2 */
-#page2 video{ 
-    width: clamp(50%, 60vw, 100%); 
-    height: 100%; 
-    object-fit: cover; 
-}
-
-/* page3 */
-#page3 .page3T1{ font-size: clamp(24px, 5vw, 50px); }
-#page3 .page3T2{ 
-    font-size: clamp(48px, 13vw, 130px); 
-    letter-spacing: clamp(-1px, -0.6vw, -5px); 
-}
-
-/* page4 */
-@media (max-width: 768px){
+    /* page4 */
     #page4 .item{
         display: flex;
         flex-direction: column;
@@ -880,12 +864,13 @@ span{display: inline-block;}
         font-size: clamp(12px, 3.5vw, 14px);
         width: 90%;
     }
-}
 
-/*page8 */
-@media (max-width: 768px){
+    /* page6 */
+    #page6{height: 10vh;}
+
+    /*page8 */
     #page8{
-        height: 80svh;
+        height: 40svh;
         background-size: 150%;
         background-position: center center;
         background-repeat: no-repeat;
@@ -895,16 +880,8 @@ span{display: inline-block;}
         margin-left: 8vw;
         margin-top: 12vw;
     }
-}
 
-/* page9 */
-#page9 h1{ 
-    font-size: clamp(28px, 8vw, 130px); 
-    letter-spacing: clamp(-1px, -0.4vw, -3px); 
-}
-
-/* page11 */
-@media (max-width: 768px){
+    /* page11 */
     #page11 [id^="ii"] h3,
     #page11 [id^="ii"] h4{
         opacity: 0;
@@ -923,16 +900,9 @@ span{display: inline-block;}
     #page11 [id^="ii"]:hover{ background-image: none !important; }
     #page11 [id^="ii"]:hover::before{ opacity: 1 !important; filter: none !important; }
     #page11 [id^="ii"].show-text::before{ opacity: 0 !important; }    
-    #page11 h2{
-        font-size: clamp(24px, 8vw, 70px); 
-        margin-top: clamp(40px, 15vw, 250px);
-    }
-    #page11 h3{ font-size: clamp(8px, 2.8vw, 10px); }
-    #page11 h4{ font-size: clamp(10px, 3.2vw, 12px); }
-}
+    
 
-/* page12 */
-@media (max-width: 768px){
+    /* page12 */
     .page12 .item{
         display: flex;
         flex-direction: column;
@@ -970,11 +940,8 @@ span{display: inline-block;}
         margin: 20px 0 40px;
         display: block;
     }
-}
 
-/* page15 */
-#page15 p{ font-size: clamp(22px, 6.5vw, 70px); margin: 0 4vw 0 8vw; }
-@media (max-width: 768px){
+    /* page15 */
     #page15 .img-group{
         display: flex;
         width: 100%;
@@ -986,10 +953,8 @@ span{display: inline-block;}
         width: 20%;
         margin: 0;
     }
-}
 
-/* footer */
-@media (max-width: 768px){
+    /* footer */
     #foot{ overflow: visible; align-items: center; }
     #foot h2{
         font-size: 12vh;
@@ -1005,3 +970,10 @@ span{display: inline-block;}
         display: inline; 
     }
 }
+
+/* page2 */
+/* #page2 video{ 
+    width: clamp(50%, 60vw, 100%); 
+    height: 100%; 
+    object-fit: cover; 
+} */
