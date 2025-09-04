@@ -465,7 +465,7 @@ function initPage12(section, items) {
     });
     }
 
-    document.querySelectorAll(".page12").forEach(section => {
+    document.querySelectorAll("#page12").forEach(section => {
     const items = section.querySelectorAll(".list .item");
     initPage12(section, items);
 });

@@ -652,7 +652,7 @@ nav{
 
 
 /* page12 - horizontal */
-.page12{
+#page12{
     position: relative;
     height: 100vh;
     width: 100%;
@@ -661,7 +661,7 @@ nav{
     align-items: center;
     justify-content: center;
 }
-.page12 .item{
+#page12 .item{
     width: 90%;
     height: 90%;
     background: #fff;
@@ -673,7 +673,7 @@ nav{
     transform: translateY(-50%);
     overflow: hidden;
 }
-.page12 .item_content {
+#page12 .item_content {
     position: absolute;
     top: 45%;
     left: 10%;  
@@ -682,17 +682,17 @@ nav{
     text-align: left;
     z-index: 1;
 }
-.page12 .item_content h2{
+#page12 .item_content h2{
     font-size: 64px;
     line-height: 1.2;
 }
-.page12 .item_content P{
+#page12 .item_content P{
     font-size: 14px;
     margin-top: 30px;
     color: #A9ABB5;
     width: 70%;   
 }
-.page12 .item_media {
+#page12 .item_media {
     position: absolute;
     top: 50%;
     left: 70%; 
@@ -910,7 +910,7 @@ span{display: inline-block;}
     #page11 [id^="ii"]{ cursor: pointer; touch-action: manipulation; }
 
     /* page12 */
-    .page12 .item{
+    #page12 .item{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -920,7 +920,7 @@ span{display: inline-block;}
         overflow: hidden;
         margin-left: -55px;
     }
-    .page12 .item_content{
+    #page12 .item_content{
         position: relative;
         top: 0;
         left: 0;
@@ -930,12 +930,12 @@ span{display: inline-block;}
         padding: 20px;
         margin: 40px auto 20px;
     }
-    .page12 .item_content h2{font-size: clamp(18px, 5.5vw, 24px);}
-    .page12 .item_content p{
+    #page12 .item_content h2{font-size: clamp(18px, 5.5vw, 24px);}
+    #page12 .item_content p{
         font-size: clamp(12px, 3vw, 14px);
         width: 85%;
     }
-    .page12 .item_media{
+    #page12 .item_media{
         position: relative;
         top: 0;
         left: 50%;
