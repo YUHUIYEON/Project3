@@ -828,6 +828,9 @@ span{display: inline-block;}
 
 /* ---------모바일---------- */
 @media (max-width: 768px){
+    /* nav */
+    nav{ position: absolute !important; top: 0; left: 0; right: 0; }
+
     /* page1 */
     #page1 .title{
         transform: translate(-150px, -300px);  

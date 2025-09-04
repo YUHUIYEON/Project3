@@ -17,15 +17,19 @@ function loco(){
     getBoundingClientRect() {   //뷰포트 크기 반환(항상 윈도우 전체 기준)
         return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
     },
-    pinType: document.querySelector("#wrap").style.transform ? "transform" : "fixed" //요소 고정 방식 지정
+    pinType: getComputedStyle(document.querySelector("#wrap")).transform !== "none" ? "transform" : "fixed"
+
 });
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update()); //ScrollTrigger가 리프레시(레이아웃 새로 계산) 할 때 LocomotiveScroll도 업데이트 → 두 라이브러리의 상태를 항상 동기화
+ScrollTrigger.addEventListener("refresh", () => 
+
+locoScroll.update()); //ScrollTrigger가 리프레시(레이아웃 새로 계산) 할 때 LocomotiveScroll도 업데이트 → 두 라이브러리의 상태를 항상 동기화
 ScrollTrigger.refresh();    //초기 위치와 핀 설정 등을 한 번 계산해줌
 }
 loco()
 
 // nav
 // ScrollTrigger.create({
+
 //     trigger: "#wrap",
 //     scroller: "#wrap",
 //     start: "top top",
@@ -186,9 +190,6 @@ function pg3Video(){
 pg3Video();
 
 
-
-
-
 // page4 vertical
 function initVerticalScroll(section, items) {
     items.forEach((item, index) => {
@@ -203,7 +204,7 @@ function initVerticalScroll(section, items) {
         scrollTrigger: {
         trigger: section,
         scroller: "#wrap",
-        pin: true,
+        pin: window.innerWidth > 768,
         start: "top top",
         end: () => `+=${items.length * 100}%`,
         scrub: 1,
@@ -447,7 +448,7 @@ function initPage12(section, items) {
         scrollTrigger: {
         trigger: section,
         scroller: "#wrap",
-        pin: true,
+        pin: window.innerWidth > 768,
         start: "top top",
         end: () => `+=${items.length * 100}%`,
         scrub: 1,
