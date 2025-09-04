@@ -5,7 +5,10 @@ function loco(){
 
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector("#wrap"),
-        smooth: true
+        smooth: true,
+        smartphone:{ smooth:true },   // 모바일 스무스
+        tablet:{ smooth:true },       // 태블릿 스무스
+        lerp: 0.08
     });
     
     locoScroll.on("scroll", ScrollTrigger.update);
@@ -19,8 +22,10 @@ function loco(){
         getBoundingClientRect(){
             return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
         },
-        pinType: "transform" // 모바일에서도 무조건 transform 기반
+        pinType: "transform" 
     });
+
+    ScrollTrigger.defaults({ scroller:"#wrap", anticipatePin:1 }); 
 
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
     ScrollTrigger.refresh();
@@ -34,7 +39,8 @@ ScrollTrigger.create({
     start: "top top",
     end: "bottom top",
     pin: "nav",
-    pinSpacing: false
+    pinSpacing: false,
+    pinReparent: true 
 });
 
 
@@ -189,9 +195,6 @@ function pg3Video(){
 pg3Video();
 
 
-
-
-
 // page4 vertical
 function initVerticalScroll(section, items) {
     items.forEach((item, index) => {
@@ -207,6 +210,7 @@ function initVerticalScroll(section, items) {
         trigger: section,
         scroller: "#wrap",
         pin: true,
+        pinReparent: true,
         start: "top top",
         end: () => `+=${items.length * 100}%`,
         scrub: 1,
@@ -383,6 +387,7 @@ tl10
     width:"0"
 },"h")
 
+
 // page11 cursor
 function cursorFunc() {
     const cursorBall = document.querySelector('#page11 .cursor-ball');
@@ -451,6 +456,7 @@ function initPage12(section, items) {
         trigger: section,
         scroller: "#wrap",
         pin: true,
+        pinReparent: true, 
         start: "top top",
         end: () => `+=${items.length * 100}%`,
         scrub: 1,
