@@ -1,38 +1,41 @@
 /* wrap */ 
 //LocomotiveScroll의 가상 스크롤 값을 ScrollTrigger에 연결해서, 두 라이브러리가 같은 기준으로 스크롤과 애니메이션을 동기화하도록 설정하는 함수
 function loco(){
-    gsap.registerPlugin(ScrollTrigger); //플러그인을 GSAP에 등록.
+    gsap.registerPlugin(ScrollTrigger);
 
-    const locoScroll = new LocomotiveScroll({   //LocomotiveScroll 초기화
-        el: document.querySelector("#wrap"), //스크롤 영역은 #wrap
-        smooth: true    //부드러운 스크롤 효과 적용
+    const locoScroll = new LocomotiveScroll({
+        el: document.querySelector("#wrap"),
+        smooth: true
     });
     
-    locoScroll.on("scroll", ScrollTrigger.update);  //LocomotiveScroll이 스크롤될 때마다 ScrollTrigger도 업데이트 되도록 연결
+    locoScroll.on("scroll", ScrollTrigger.update);
 
-    ScrollTrigger.scrollerProxy("#wrap", {  //ScrollTrigger가 LocomotiveScroll을 “대체 스크롤러”처럼 인식하게 하는 API.
-    scrollTop(value) {  //값이 있으면 scrollTo() 실행 → 특정 위치로 강제 스크롤 이동
-        return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-    }, 
-    getBoundingClientRect() {   //뷰포트 크기 반환(항상 윈도우 전체 기준)
-        return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-    },
-    pinType: document.querySelector("#wrap").style.transform ? "transform" : "fixed" //요소 고정 방식 지정
-});
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update()); //ScrollTrigger가 리프레시(레이아웃 새로 계산) 할 때 LocomotiveScroll도 업데이트 → 두 라이브러리의 상태를 항상 동기화
-ScrollTrigger.refresh();    //초기 위치와 핀 설정 등을 한 번 계산해줌
+    ScrollTrigger.scrollerProxy("#wrap", {
+        scrollTop(value){
+            return arguments.length 
+                ? locoScroll.scrollTo(value, 0, 0) 
+                : locoScroll.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect(){
+            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+        },
+        pinType: "transform" // 모바일에서도 무조건 transform 기반
+    });
+
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+    ScrollTrigger.refresh();
 }
-loco()
+loco();
 
 // nav
-// ScrollTrigger.create({
-//     trigger: "#wrap",
-//     scroller: "#wrap",
-//     start: "top top",
-//     end: "bottom bottom",
-//     pin: "nav",
-//     pinSpacing: false
-// });
+ScrollTrigger.create({
+    trigger: "#page1",
+    scroller: "#wrap",
+    start: "top top",
+    end: "bottom top",
+    pin: "nav",
+    pinSpacing: false
+});
 
 
 // page1
