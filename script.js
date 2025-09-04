@@ -465,13 +465,13 @@ function initPage12(section, items) {
     });
     }
 
-    document.querySelectorAll(".page12").forEach(section => {
+    document.querySelectorAll("#page12").forEach(section => {
     const items = section.querySelectorAll(".list .item");
     initPage12(section, items);
 });
 
 
-// pahe14
+// page14
 var tl14 = gsap.timeline({
     scrollTrigger:{
         trigger:"#page14",
