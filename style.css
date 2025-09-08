@@ -843,13 +843,14 @@ span{display: inline-block;}
     #footer {
         height: 100svh;
     }
+    #page11{height: 70svh;}
     
     /* page1 */
     #page1 .title{
         transform: translate(-130px, -300px);  
         /* position: relative; */
     }
-
+    
     /* page4 */
     #page4 .item{
         display: flex;
@@ -897,6 +898,8 @@ span{display: inline-block;}
         margin-top: 12vw;
     }
 
+    /* page9 */
+
     /* page11 */
     #ii1, #ii2, #ii3{padding: 40px 15px;}
     #page11 h4{margin-top: 10px;}
@@ -935,7 +938,7 @@ span{display: inline-block;}
         min-height: 70vh;
         border-radius: 20px;
         overflow: hidden;
-        margin-left: -55px;
+        margin-left: -65px;
     }
     #page12 .item_content{
         position: relative;
@@ -965,6 +968,11 @@ span{display: inline-block;}
         display: block;
     }
 
+    /* page3 */
+    #page3 .page3T1{ margin-top: 8vh; }
+    #page3 .clock{ transform: scale(0.5);}
+    #page3 .clock-box{ margin-top: -12vh; }
+
     /* page15 */
     #page15{height: 80vh !important;} 
     #page15 .smooth-content{ height: auto !important; }
@@ -980,12 +988,15 @@ span{display: inline-block;}
     }
 
     /* footer */
-    #footer{height: 70vh;}
+    #footer{height: 70vh; padding: 0 10px;}
+    #foot{overflow: visible; justify-content: center;}
     #foot h2{
-        font-size: 11svh;
-        letter-spacing: -6px;
-        color: #ffffffa9;
-        margin-bottom: 15px;
+        font-size: 13svh;
+        letter-spacing: -5px;
+        color: #ffffffc0;
+        margin-bottom: 13svh;
+        white-space: nowrap;
+        overflow: visible;
     }
     #foot h2 span{
         transform: none !important;

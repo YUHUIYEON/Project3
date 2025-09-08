@@ -12,7 +12,9 @@ function loco(){
 
     const locoScroll = new LocomotiveScroll({   //LocomotiveScroll 초기화
         el: document.querySelector("#wrap"), //스크롤 영역은 #wrap
-        smooth: true    //부드러운 스크롤 효과 적용
+        smooth: true,    //부드러운 스크롤 효과 적용
+        smartphone: { smooth: true },
+        tablet: { smooth: true }
     });
     
     locoScroll.on("scroll", ScrollTrigger.update);  //LocomotiveScroll이 스크롤될 때마다 ScrollTrigger도 업데이트 되도록 연결
@@ -61,6 +63,7 @@ if (window.innerWidth <= 768) {
 //     pin: "nav",
 //     pinSpacing: false
 // });
+
 
 
 // page1
@@ -282,7 +285,6 @@ pg5()
 
 
 // page8
-// page8
 function pg8(){
     const mm = gsap.matchMedia();
 
@@ -387,7 +389,6 @@ gsap.to("#box-1", {
         scrub: true
     }
 });
-
 
 
 // page11 cursor
@@ -546,9 +547,38 @@ if(window.innerWidth > 768){   // PC 전용
     tle.from("#foot h2 span",{ y:"-100%", stagger:-0.2 })
 }
 (function(){
+    // 모바일에서 span을 제거하지 않습니다. (주루룩 애니메이션용으로 사용)
+    // 데스크톱은 위쪽 블록에서 분할 처리됨.
+})();
+
+// footer 모바일 - 위에서 주루룩(글자 단위 스태거)
+(function(){
+    if (!window.matchMedia('(max-width: 768px)').matches) return;
     const h2 = document.querySelector('#footer h2');
     if(!h2) return;
-    if(window.innerWidth <= 768 && h2.querySelector('span')){
-        h2.textContent = h2.textContent; // 분할(span) 제거
+
+    // 이미 분할되어 있지 않다면 글자를 span으로 분할
+    if (!h2.querySelector('span')){
+        const text = h2.textContent;
+        h2.innerHTML = text.split('').map(ch=>`<span>${ch}</span>`).join('');
     }
+    const chars = h2.querySelectorAll('span');
+    if(!chars.length) return;
+
+    gsap.set(chars, { y: -120, opacity: 0 });
+    gsap.to(chars, {
+        y: 0,
+        opacity: 1,
+        ease: 'power3.out',
+        duration: 0.28,
+        stagger: 0.025,
+        scrollTrigger: {
+            trigger: '#footer',
+            scroller: '#wrap',
+            start: 'top 90%',
+            end: 'top 60%',
+            scrub: true,
+            invalidateOnRefresh: true
+        }
+    });
 })();
