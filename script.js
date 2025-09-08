@@ -2,6 +2,13 @@
 //LocomotiveScroll의 가상 스크롤 값을 ScrollTrigger에 연결해서, 두 라이브러리가 같은 기준으로 스크롤과 애니메이션을 동기화하도록 설정하는 함수
 function loco(){
     gsap.registerPlugin(ScrollTrigger); //플러그인을 GSAP에 등록.
+    // 모바일 역스크롤 겹침/점프 완화 (데스크톱 영향 없음)
+    if (window.innerWidth <= 768) {
+        ScrollTrigger.config({ ignoreMobileResize: true });
+        if (ScrollTrigger.normalizeScroll) {
+            ScrollTrigger.normalizeScroll(true);
+        }
+    }
 
     const locoScroll = new LocomotiveScroll({   //LocomotiveScroll 초기화
         el: document.querySelector("#wrap"), //스크롤 영역은 #wrap
@@ -17,12 +24,33 @@ function loco(){
     getBoundingClientRect() {   //뷰포트 크기 반환(항상 윈도우 전체 기준)
         return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
     },
-    pinType: document.querySelector("#wrap").style.transform ? "transform" : "fixed" //요소 고정 방식 지정
+    pinType: getComputedStyle(document.querySelector("#wrap")).transform !== "none" ? "transform" : "fixed" //요소 고정 방식 지정
 });
+window.__locoScroll = locoScroll;
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update()); //ScrollTrigger가 리프레시(레이아웃 새로 계산) 할 때 LocomotiveScroll도 업데이트 → 두 라이브러리의 상태를 항상 동기화
 ScrollTrigger.refresh();    //초기 위치와 핀 설정 등을 한 번 계산해줌
 }
 loco()
+
+// 모바일에서만 초기 로드/리사이즈/회전 시 동기화 강화
+if (window.innerWidth <= 768) {
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            if (window.__locoScroll) window.__locoScroll.update();
+            ScrollTrigger.refresh(true);
+        }, 60);
+    });
+    window.addEventListener("resize", () => {
+        if (window.__locoScroll) window.__locoScroll.update();
+        ScrollTrigger.refresh(true);
+    });
+    window.addEventListener("orientationchange", () => {
+        setTimeout(() => {
+            if (window.__locoScroll) window.__locoScroll.update();
+            ScrollTrigger.refresh(true);
+        }, 120);
+    });
+}
 
 // nav
 // ScrollTrigger.create({
@@ -175,7 +203,7 @@ setInterval(() => {
     hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
     mn.style.transform = `rotateZ(${mm}deg)`;
     sc.style.transform = `rotateZ(${ss}deg)`;
-})
+},1000)
 // page3 배경
 function pg3Video(){
     const video = document.querySelector("#page3 .page3-bg");
@@ -361,24 +389,6 @@ gsap.to("#box-1", {
 });
 
 
-// page10
-var tl10 = gsap.timeline({
-    scrollTrigger:{
-        trigger:"#page10",
-        scroller:"#wrap",
-        // markers:true,
-        start:"top 70%",
-        end:"top 40%",
-        scrub:2,
-    }
-})
-tl10
-.from("#li2",{
-    height:"0"
-},"h")
-.from("#li1",{
-    width:"0"
-},"h")
 
 // page11 cursor
 function cursorFunc() {

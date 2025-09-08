@@ -296,7 +296,7 @@ nav{
     position: relative;
     height: 100vh; 
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -828,9 +828,25 @@ span{display: inline-block;}
 
 /* ---------모바일---------- */
 @media (max-width: 768px){
+    /* nav */
+    nav{position: relative !important;}
+
+    /* 전체 */
+    #page1,
+    #page2,
+    #page3,
+    #page4,
+    #page8,
+    #page9,
+    #page12,
+    #page15,
+    #footer {
+        height: 100svh;
+    }
+    
     /* page1 */
     #page1 .title{
-        transform: translate(-150px, -300px);  
+        transform: translate(-130px, -300px);  
         /* position: relative; */
     }
 
@@ -910,6 +926,7 @@ span{display: inline-block;}
     #page11 [id^="ii"]{ cursor: pointer; touch-action: manipulation; }
 
     /* page12 */
+    #page12{ overflow: visible; }
     #page12 .item{
         display: flex;
         flex-direction: column;
@@ -965,8 +982,10 @@ span{display: inline-block;}
     /* footer */
     #footer{height: 70vh;}
     #foot h2{
-        font-size: 11vh;
-        letter-spacing: -8px;
+        font-size: 11svh;
+        letter-spacing: -6px;
+        color: #ffffffa9;
+        margin-bottom: 15px;
     }
     #foot h2 span{
         transform: none !important;
